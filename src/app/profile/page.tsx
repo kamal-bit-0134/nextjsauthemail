@@ -15,7 +15,7 @@ const Profile = () => {
     event.preventDefault();
     try {
       const res = await axios.get('/api/users/logout')
-      console.log('hehe')
+      console.log(res)
       router.push('/login')
       
       
