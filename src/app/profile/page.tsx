@@ -14,14 +14,12 @@ const Profile = () => {
 
     event.preventDefault();
     try {
-      const res = await axios.get('/api/users/logout')
-      console.log(res)
+      await axios.get('/api/users/logout')
       router.push('/login')
       
       
     } catch (error:any) {
       console.log(error.message)
-      await toast.error(error.message)
     }
   }
 
