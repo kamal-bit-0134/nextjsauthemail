@@ -39,10 +39,11 @@ export const POST = async(request:NextRequest)=>{
             message:"Login Successfull",
             success: true,
         }) 
-        response.cookies.set("token",token,{
-            httpOnly: true,
-            expires: new Date(Date.now() + 24 * 60 * 60 * 1000) })
-        })
+        response.cookie("token", token, {
+          httpOnly: true,
+          expires: new Date(Date.now() + 24 * 60 * 60 * 1000)
+        });
+
         return response;
 
     } catch (error:any) {
